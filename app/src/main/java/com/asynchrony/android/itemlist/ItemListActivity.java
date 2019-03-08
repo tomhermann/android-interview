@@ -11,10 +11,7 @@ import android.view.View;
 
 import java.util.List;
 
-public class ItemListActivity extends AppCompatActivity implements ItemListView {
-
-
-    private ItemListPresenter itemListPresenter;
+public class ItemListActivity extends AppCompatActivity {
     private RecyclerView itemListRecycler;
 
     @Override
@@ -22,9 +19,6 @@ public class ItemListActivity extends AppCompatActivity implements ItemListView 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
-
-        itemListPresenter = new ItemListPresenter(new ItemListModel());
-        itemListPresenter.attach(this);
 
         itemListRecycler = findViewById(R.id.item_list);
         itemListRecycler.setLayoutManager(new LinearLayoutManager(this));
@@ -41,25 +35,6 @@ public class ItemListActivity extends AppCompatActivity implements ItemListView 
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        return itemListPresenter.menuItemSelected(id) ||
-                super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void setAddButtonClickListener(View.OnClickListener listener) {
-    }
-
-    @Override
-    public String getNewItemText() {
-        return "";
-    }
-
-    @Override
-    public void clearItemInput() {
-    }
-
-    @Override
-    public void updateList(List<String> itemList) {
-
+        return super.onOptionsItemSelected(item);
     }
 }

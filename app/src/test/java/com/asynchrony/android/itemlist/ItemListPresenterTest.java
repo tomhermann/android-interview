@@ -30,7 +30,7 @@ public class ItemListPresenterTest {
     private ItemListView view;
 
     @Mock
-    private ItemListModel model;
+    private ItemList model;
 
     @Mock
     private List<String> itemList;
