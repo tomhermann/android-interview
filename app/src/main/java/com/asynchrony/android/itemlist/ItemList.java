@@ -3,8 +3,7 @@ package com.asynchrony.android.itemlist;
 import java.util.Collections;
 import java.util.List;
 
-class ItemListModel {
-
+class ItemList {
 
     public void addItem(String item) {
 
